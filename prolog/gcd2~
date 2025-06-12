@@ -1,0 +1,14 @@
+% Base case: GCD of A and 0 is A (when A > 0)
+gcd(A, 0, A) :-
+    A > 0.
+
+% Recursive case: GCD of A and B
+gcd(A, B, GCD) :-
+    B > 0,                  % Ensure B is greater than 0
+    R is A mod B,            % Calculate remainder (A mod B)
+    gcd(B, R, GCD).          % Recursive call with B and the remainder
+
+% Wrapper predicate to calculate GCD of two numbers A and B
+gcd_of_two_numbers(A, B, GCD) :-
+    gcd(A, B, GCD).
+

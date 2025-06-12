@@ -1,0 +1,6 @@
+delete_kth_element([_|Tail],1,Tail).
+delete_kth_element([Head|Tail],K,[Head|ResultTail]):-
+ K>1,
+ K1 is K-1,
+ delete_kth_element(Tail,K1,ResultTail).
+

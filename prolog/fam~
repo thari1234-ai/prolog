@@ -1,0 +1,19 @@
+parent(john,mary).
+parent(john,james).
+parent(mary,alice).
+parent(mary,bob).
+parent(james,charlie).
+parent(susan,mary).
+parent(susan,james).
+child(Child,Parent):- parent(Parent,Child).
+sibling(X,Y):-
+parent(P,X),
+Parent(P,Y),
+X\=Y.
+Gradnparent(GP,GC):-
+Parent(GP,P),
+Parent(P,GC).
+cousin(X,Y):-
+Parent(P1,X),
+Parent(P2,Y),
+sibling(P1,P2).

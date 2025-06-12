@@ -1,0 +1,7 @@
+gcd(A,0,A):- A>0.
+gcd(A,B,GCD):-
+ B>0,
+ R is A mod B,
+ gcd(B,R,GCD).
+gcd_of_two_numbers(A,B,GCD):-
+ gcd(A,B,GCD).
